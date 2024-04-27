@@ -14,8 +14,8 @@ export const createSession = async (req, res) => {
     }
     try {
         // Recherche la dernière session créée pour cet utilisateur dans l'intervalle d'une minute
-        const oneMinuteAgo = moment().subtract(1, 'minute');
-        const existingSession = await Session.findOne({ email, createdAt: { $gte: oneMinuteAgo } });
+        const tenMinutesAgo = moment().subtract(10, 'minute');
+        const existingSession = await Session.findOne({ email, createdAt: { $gte: tenMinutesAgo } });
 
         if (existingSession) {
             // Si une session récente existe, renvoyer cette session
