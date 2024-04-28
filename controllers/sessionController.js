@@ -13,7 +13,7 @@ export const createSession = async (req, res) => {
         return res.status(401).json({ error: "Timezone is missing" });
     }
     try {
-        // Recherche la dernière session créée pour cet utilisateur dans l'intervalle d'une minute
+        // Recherche la dernière session créée pour cet utilisateur dans l'intervalle de dix minutes
         const tenMinutesAgo = moment().subtract(10, 'minute');
         const existingSession = await Session.findOne({ email, createdAt: { $gte: tenMinutesAgo } });
 
