@@ -5,7 +5,7 @@ import moment from 'moment-timezone';
 import Session from '../models/sessionModel.js';
 import { fetchWeatherData } from '../services/weatherService.js';
 
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: '.env' });
 export const createSession = async (req, res) => {
     const { email, lat, lng, timezone } = req.body;
 
