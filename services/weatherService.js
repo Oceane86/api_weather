@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 
-dotenv.config({ path: '.env' });
+dotenv.config({ path: '../.env' });
 
 export async function fetchWeatherData(lat, lng) {
     const apiKey = process.env.OPENWEATHER_API_KEY;
