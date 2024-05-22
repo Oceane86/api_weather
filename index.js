@@ -30,7 +30,7 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
-app.use('/api/history', sessionRoutes);
+app.use('/api/latest', sessionRoutes);
 
 const startServer = async () => {
   try {
