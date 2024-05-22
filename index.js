@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000;
 
 const whitelist = [
   'http://localhost:4200',
-  'http://localhost:3000/',
-  'https://weather-appli-4e63cbcc320e.herokuapp.com/',
-  'https://weather-application-oceane.netlify.app/',
+  'http://localhost:3000',
+  'https://weather-appli-4e63cbcc320e.herokuapp.com',
+  'https://weather-application-oceane.netlify.app'
   // 'https://chainez-mouelhi.github.io/Angular_localisation_app'
 ];
 
