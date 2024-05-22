@@ -12,7 +12,6 @@ const whitelist = [
   'http://localhost:3000',
   'https://weather-appli-4e63cbcc320e.herokuapp.com',
   'https://weather-application-oceane.netlify.app'
-  // 'https://chainez-mouelhi.github.io/Angular_localisation_app'
 ];
 
 var corsOptions = {
@@ -27,6 +26,15 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+// Middleware pour gérer les en-têtes CORS
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://weather-application-oceane.netlify.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 app.use(express.json());
 
